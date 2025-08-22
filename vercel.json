@@ -1,0 +1,22 @@
+{
+    "builds": [
+        {
+            "src": "HTML/**/*.html",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "CSS/**/*.css",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "JS/**/*.js",
+            "use": "@vercel/static"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/HTML/home.html"
+        }
+    ]
+}
