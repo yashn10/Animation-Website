@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Animatrix — Modern HTML/CSS/JS Animations</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Prism for optional code styling (used in snippet cards) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+  <link rel="stylesheet" href="../CSS/home.css" />
+
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="brand">
+      <div class="logo">Animatrix</div>
+      <div class="small" style="margin-left:6px;color:var(--muted);font-weight:600;">Animations Library</div>
+    </div>
+
+    <nav aria-label="Main navigation">
+      <a href="home.html" class="navlink">Home</a>
+      <a href="navigation.html" class="navlink">Navigation</a>
+      <a href="cards.html" class="navlink">Cards</a>
+      <a href="loading.html" class="navlink">Loaders</a>
+      <a href="buttons.html" class="navlink">Buttons</a>
+      <a href="forms.html" class="navlink">Forms</a>
+      <a href="widgets.html" class="navlink">Widgets</a>
+      <a href="hero.html" class="navlink">Hero</a>
+
+      <div class="search" role="search" aria-label="Search animations">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" style="opacity:0.9">
+          <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+        </svg>
+        <input placeholder="Search animations..." aria-label="Search animations" />
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="left">
+      <h1 id="hero-title">Beautiful, production-ready UI animations — pure HTML · CSS · JS</h1>
+      <p>Save time with a curated library of modern, handcrafted animations. Copy & paste each code snippet directly
+        into your project. Designed with performance in mind (transform/opacity) and easy customization.</p>
+
+      <div class="cta-row" style="margin-top:18px">
+        <a href="cards.html" class="btn btn-primary" title="Explore Cards">Browse Components</a>
+        <a href="#latest" class="btn btn-ghost" title="See latest">See Latest</a>
+      </div>
+
+      <div class="how" style="margin-top:20px">
+        <div class="box">
+          <h3 style="margin-bottom:8px">How to use</h3>
+          <ul>
+            <li><span class="dot" aria-hidden></span> Browse categories or search for an effect.</li>
+            <li><span class="dot" aria-hidden></span> Open a snippet and click <strong>Copy</strong>.</li>
+            <li><span class="dot" aria-hidden></span> Paste into your project — customize colors & sizes.</li>
+            <li><span class="dot" aria-hidden></span> All animations are dependency-free (vanilla HTML/CSS/JS).</li>
+          </ul>
+        </div>
+
+        <aside class="box" aria-label="Quick stats">
+          <h4 style="margin-bottom:8px">Quick stats</h4>
+          <div style="display:flex;flex-direction:column;gap:10px;color:var(--muted);font-weight:600">
+            <div>🔥 250+ Animations</div>
+            <div>⚡ Modern CSS only: 70%</div>
+            <div>⭐ Community favorites: 120</div>
+          </div>
+        </aside>
+      </div>
+
+    </div>
+
+    <div class="right">
+      <div class="featured-preview" role="region" aria-label="Featured animation">
+        <div class="preview-box">Demo</div>
+        <div class="preview-meta">
+          <div style="font-weight:700;color:#fff">Attention — Bounce</div>
+          <div style="font-size:0.9rem;color:var(--muted)">Button micro-interaction • CSS keyframes</div>
+        </div>
+      </div>
+
+      <div style="display:flex; gap:10px; margin-top:12px;">
+        <div style="flex:1" class="featured-preview">
+          <div
+            style="width:60px;height:40px;border-radius:8px;background:linear-gradient(90deg,var(--primary-1),var(--accent));">
+          </div>
+          <div style="font-size:0.9rem;color:var(--muted);margin-left:8px">Popular: Loading Spinners</div>
+        </div>
+        <div style="flex:1" class="featured-preview">
+          <div style="width:60px;height:40px;border-radius:8px;background:linear-gradient(90deg,#ff758c,#ff7eb3);">
+          </div>
+          <div style="font-size:0.9rem;color:var(--muted);margin-left:8px">New: Card Flip Variants</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories" aria-labelledby="categories-title">
+    <h2 id="categories-title" style="font-family:'Montserrat',sans-serif;font-size:1.6rem">Explore by category</h2>
+
+    <div class="categories-grid" role="list">
+      <a href="navigation.html" class="category-card" role="listitem" aria-label="Navigation & menus">
+        <div class="icon">☰</div>
+        <h3>Navigation & Menus</h3>
+        <p>Dropdowns, fancy sidebars, fullscreen overlays & micro-interactions.</p>
+        <div class="taglist" style="margin-top:10px">
+          <span class="tag">Dropdown</span><span class="tag">Sidebar</span><span class="tag">Hamburger</span>
+        </div>
+      </a>
+
+      <a href="cards.html" class="category-card" role="listitem" aria-label="Cards & content">
+        <div class="icon">▦</div>
+        <h3>Cards & Content</h3>
+        <p>3D flips, info reveals, hover shines and interactive layouts.</p>
+        <div class="taglist" style="margin-top:10px">
+          <span class="tag">3D</span><span class="tag">Hover</span><span class="tag">Reveal</span>
+        </div>
+      </a>
+
+      <a href="loading.html" class="category-card" role="listitem" aria-label="Loading & feedback">
+        <div class="icon">⟳</div>
+        <h3>Loading & Feedback</h3>
+        <p>Spinners, skeletons, progress bars and animated loaders for UIs.</p>
+        <div class="taglist" style="margin-top:10px">
+          <span class="tag">Spinner</span><span class="tag">Skeleton</span><span class="tag">Progress</span>
+        </div>
+      </a>
+
+      <a href="text and background.html" class="category-card" role="listitem" aria-label="Text & background">
+        <div class="icon">✦</div>
+        <h3>Text & Background</h3>
+        <p>Gradient text, typing, matrix rain, canvas fireworks and more.</p>
+        <div class="taglist" style="margin-top:10px">
+          <span class="tag">Typography</span><span class="tag">Canvas</span><span class="tag">Gradient</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Latest snippets -->
+  <section id="latest" class="section-block" aria-labelledby="latest-title">
+    <h2 id="latest-title" style="font-family:'Montserrat',sans-serif;font-size:1.6rem">Latest snippets</h2>
+
+    <div class="cards-row" role="list">
+      <!-- snippet card 1 -->
+      <article class="snippet-card" role="listitem">
+        <div class="snippet-preview">Bounce Button</div>
+        <h4 style="margin-bottom:6px">Bounce Pulse Button</h4>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:8px">A soft bounce used for CTAs. Uses transform
+          translateY and scale for GPU acceleration.</p>
+        <pre><code class="language-html">&lt;button class="anim-bounce"&gt;Click Me&lt;/button&gt;
+&lt;style&gt;
+.anim-bounce{ padding:10px 20px; border-radius:10px; background:linear-gradient(90deg,#4facfe,#764ba2); color:#041426; animation:b 1.4s infinite; }
+@keyframes b{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+&lt;/style&gt;</code></pre>
+        <div class="snippet-actions">
+          <button class="copy-btn" data-code>Copy</button>
+          <div style="color:var(--muted);font-size:0.86rem">CSS • Button</div>
+        </div>
+      </article>
+
+      <!-- snippet card 2 -->
+      <article class="snippet-card" role="listitem">
+        <div class="snippet-preview">Three Dots</div>
+        <h4 style="margin-bottom:6px">Three Bouncing Dots</h4>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:8px">Small loader for inline UI elements.</p>
+        <pre><code class="language-html">&lt;div class="dots"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;style&gt;.dots span{display:inline-block;width:10px;height:10px;border-radius:50%;background:#4facfe;animation:dot .6s infinite} @keyframes dot{0%,100%{transform:scale(.4)}40%{transform:scale(1)}}&lt;/style&gt;</code></pre>
+        <div class="snippet-actions">
+          <button class="copy-btn" data-code>Copy</button>
+          <div style="color:var(--muted);font-size:0.86rem">Loader • Micro</div>
+        </div>
+      </article>
+
+      <!-- snippet card 3 -->
+      <article class="snippet-card" role="listitem">
+        <div class="snippet-preview">Card Flip</div>
+        <h4 style="margin-bottom:6px">3D Flip Card</h4>
+        <p style="color:var(--muted);font-size:0.95rem;margin-bottom:8px">A hover flip revealing more information on the
+          back.</p>
+        <pre><code class="language-html">&lt;div class="card-3d"&gt;&lt;div class="card-inner"&gt;&lt;div class="card-front"&gt;Front&lt;/div&gt;&lt;div class="card-back"&gt;Back&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+        <div class="snippet-actions">
+          <button class="copy-btn" data-code>Copy</button>
+          <div style="color:var(--muted);font-size:0.86rem">Card • 3D</div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" aria-labelledby="testimonials-title">
+    <h2 id="testimonials-title" style="font-family:'Montserrat',sans-serif;font-size:1.6rem">What developers say</h2>
+    <div class="test-grid">
+      <div class="t-card">
+        <strong style="color:#fff">Arjun K.</strong>
+        <p style="margin-top:8px">“Animatrix saved me hours — clean, copy-ready code and beautiful variants.”</p>
+      </div>
+      <div class="t-card">
+        <strong style="color:#fff">Meera S.</strong>
+        <p style="margin-top:8px">“Great modern styles — I used the loaders and the card flips in two projects already.”
+        </p>
+      </div>
+      <div class="t-card">
+        <strong style="color:#fff">Paul R.</strong>
+        <p style="margin-top:8px">“Perfect for prototyping. All animations are performance mindful.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / Newsletter -->
+  <footer>
+    <div style="display:flex;flex-direction:column;gap:8px;">
+      <div style="font-weight:700">Animatrix</div>
+      <div class="small">Handcrafted animations — free to copy, customize & ship.</div>
+    </div>
+
+    <div class="newsletter" role="form" aria-label="Subscribe">
+      <input type="email" placeholder="Your email address" aria-label="Your email address" />
+      <button class="btn btn-primary" style="padding:10px 14px;border-radius:10px;">Subscribe</button>
+    </div>
+  </footer>
+
+  <!-- Prism + scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="../JS/home.js"></script>
+
+</body>
+
+</html>

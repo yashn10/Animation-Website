@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Forms</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+    <link rel="stylesheet" href="../CSS/forms.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Animatrix</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="navigation.html">Navigation</a>
+            <a href="cards.html">Cards</a>
+            <a href="loading.html">Loaders</a>
+            <a href="buttons.html">Buttons</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h2 style="margin:0;font-family:Montserrat">Forms — micro-interactions</h2>
+                <div style="color:var(--muted)">Floating inputs, morph checkboxes, animated submit with progress.</div>
+            </div>
+        </section>
+
+        <div class="grid">
+
+            <!-- Floating label -->
+            <div class="card">
+                <h3>Floating Label Input</h3>
+                <p style="color:var(--muted)">Label rises on focus or when there's content.</p>
+                <div class="demo">
+                    <div style="width:100%;max-width:420px">
+                        <div class="field">
+                            <input class="input" id="name" placeholder=" " />
+                            <label class="floating-label" for="name">Full name</label>
+                        </div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="field"&gt;
+  &lt;input class="input" placeholder=" " /&gt;
+  &lt;label class="floating-label"&gt;Full name&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Animated border & validation -->
+            <div class="card">
+                <h3>Animated border / focus</h3>
+                <p style="color:var(--muted)">Focus glow & subtle validation color.</p>
+                <div class="demo">
+                    <input class="input-animated" id="email" placeholder="you@company.com" style="max-width:420px" />
+                </div>
+                <pre><code class="language-html">&lt;input class="input-animated" placeholder="you@company.com"&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Password toggle -->
+            <div class="card">
+                <h3>Password Toggle</h3>
+                <p style="color:var(--muted)">Click eye to toggle visibility with animation.</p>
+                <div class="demo">
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <div style="max-width:320px;width:100%">
+                            <input id="pw" class="input-animated" type="password" placeholder=" " />
+                        </div>
+                        <button class="pw-toggle" id="pw-toggle">👁️</button>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;input id="pw" type="password"&gt;
+&lt;button id="pw-toggle"&gt;👁️&lt;/button&gt;
+
+/* JS toggles input.type between password/text */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Morph checkbox -->
+            <div class="card">
+                <h3>Morph Checkbox → Tick</h3>
+                <p style="color:var(--muted)">Stylish toggle that morphs to accent color and moves the dot.</p>
+                <div class="demo">
+                    <div class="morph-checkbox" id="morph">
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="morph-checkbox" id="morph"&gt;&lt;div class="dot"&gt;&lt;/div&gt;&lt;/div&gt;
+
+/* JS toggles .active on click */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Animated submit -->
+            <div class="card">
+                <h3>Submit → Progress → Check</h3>
+                <p style="color:var(--muted)">Submit button animates progress fill then shows success icon.</p>
+                <div class="demo" style="flex-direction:column;gap:8px">
+                    <button class="btn-submit" id="submit-btn">Submit</button>
+                    <div
+                        style="width:100%;max-width:420px;background:rgba(255,255,255,0.04);height:12px;border-radius:8px;overflow:hidden">
+                        <div class="progress-fill" id="progress"></div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;button id="submit-btn"&gt;Submit&lt;/button&gt;
+&lt;div class="progress-fill" id="progress"&gt;&lt;/div&gt;
+
+/* JS simulates progress then shows success */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Full Signup / Profile -->
+            <div class="card" id="signup-card">
+                <h3>Sign up — Create profile</h3>
+                <p style="color:var(--muted)">Avatar upload, realtime validation, country select and terms.</p>
+
+                <div class="demo" style="flex-direction:column;align-items:stretch;gap:10px;">
+                    <form id="signupForm" class="form-grid" novalidate>
+                        <div class="avatar-picker">
+                            <div class="avatar-preview" id="avatarPreview">A</div>
+                            <label class="file-label">
+                                <input type="file" id="avatarInput" accept="image/*" hidden>
+                                <span>Upload avatar</span>
+                            </label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="su_name" placeholder=" " required />
+                            <label class="floating-label" for="su_name">Full name</label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="su_email" type="email" placeholder=" " required />
+                            <label class="floating-label" for="su_email">Email address</label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="su_phone" placeholder=" " />
+                            <label class="floating-label" for="su_phone">Phone (optional)</label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="su_password" type="password" placeholder=" " minlength="8"
+                                required />
+                            <label class="floating-label" for="su_password">Password (min 8 chars)</label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="su_confirm" type="password" placeholder=" " required />
+                            <label class="floating-label" for="su_confirm">Confirm password</label>
+                        </div>
+
+                        <div class="field">
+                            <select id="su_country" class="input" aria-label="Country">
+                                <option value="">Choose country</option>
+                                <option>United States</option>
+                                <option>India</option>
+                                <option>United Kingdom</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                            </select>
+                        </div>
+
+                        <label class="checkbox-row"><input type="checkbox" id="su_terms"> I agree to the <a
+                                href="#">Terms</a></label>
+
+                        <div style="display:flex;gap:10px;align-items:center">
+                            <button class="btn-gradient" type="submit">Create account</button>
+                            <div class="label" id="signupStatus"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <pre><code class="language-html">&lt;form id="signupForm"&gt;...avatar, name, email, password, country, tos...&lt;/form&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#signup-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Login (with social) -->
+            <div class="card" id="login-card">
+                <h3>Login</h3>
+                <p style="color:var(--muted)">Email login plus OAuth-style social buttons.</p>
+
+                <div class="demo" style="flex-direction:column;gap:10px;align-items:stretch">
+                    <form id="loginForm" class="form-grid" style="max-width:420px">
+                        <div class="field">
+                            <input class="input" id="li_email" type="email" placeholder=" " required />
+                            <label class="floating-label" for="li_email">Email</label>
+                        </div>
+
+                        <div class="field">
+                            <input class="input" id="li_password" type="password" placeholder=" " required />
+                            <label class="floating-label" for="li_password">Password</label>
+                        </div>
+
+                        <div style="display:flex;gap:10px;align-items:center">
+                            <button class="btn-3d" type="submit">Log in</button>
+                            <a class="btn-ghost" href="#">Forgot?</a>
+                        </div>
+
+                        <div style="display:flex;gap:10px;margin-top:8px">
+                            <button class="btn-border-gradient social-btn" data-provider="google">G</button>
+                            <button class="btn-border-gradient social-btn" data-provider="github">gh</button>
+                            <button class="btn-border-gradient social-btn" data-provider="twitter">t</button>
+                        </div>
+                    </form>
+                </div>
+
+                <pre><code class="language-html">&lt;form id="loginForm"&gt;...email/password + social buttons...&lt;/form&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#login-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Checkout / Payment -->
+            <div class="card" id="checkout-card">
+                <h3>Checkout</h3>
+                <p style="color:var(--muted)">Billing details + card input (mock) and order summary.</p>
+
+                <div class="demo" style="display:flex;gap:12px;align-items:flex-start;">
+                    <form id="checkoutForm" style="flex:1;min-width:260px;display:flex;flex-direction:column;gap:10px">
+                        <div class="field"><input class="input" id="bill_name" placeholder=" " required><label
+                                class="floating-label">Full name</label></div>
+                        <div class="field"><input class="input" id="bill_address" placeholder=" "><label
+                                class="floating-label">Address</label></div>
+                        <div class="field"><input class="input" id="bill_city" placeholder=" "><label
+                                class="floating-label">City</label></div>
+
+                        <div class="field">
+                            <input class="input" id="card_number" placeholder=" " maxlength="19" inputmode="numeric" />
+                            <label class="floating-label">Card number</label>
+                        </div>
+
+                        <div style="display:flex;gap:8px">
+                            <div class="field" style="flex:1"><input class="input" id="card_exp" placeholder=" "
+                                    maxlength="5" /><label class="floating-label">MM/YY</label></div>
+                            <div class="field" style="width:120px"><input class="input" id="card_cvc" placeholder=" "
+                                    maxlength="4" /><label class="floating-label">CVC</label></div>
+                        </div>
+
+                        <button class="btn-gradient" type="submit">Pay $129</button>
+                        <div class="label" id="checkoutStatus" style="margin-top:6px"></div>
+                    </form>
+
+                    <aside style="width:260px">
+                        <div style="background:linear-gradient(180deg,#071426,#0b2136);padding:12px;border-radius:10px">
+                            <h4 style="margin:0 0 8px">Order summary</h4>
+                            <div style="color:var(--muted)">Product — Animatrix Pro</div>
+                            <div style="margin-top:8px;font-weight:800">Total: $129</div>
+                        </div>
+                    </aside>
+                </div>
+
+                <pre><code class="language-html">&lt;form id="checkoutForm"&gt;...card number masked, expiry, cvc...&lt;/form&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#checkout-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Multi-step wizard -->
+            <div class="card" id="wizard-card">
+                <h3>Signup Wizard</h3>
+                <p style="color:var(--muted)">Three-step onboarding with progress bar and final summary.</p>
+
+                <div class="demo" style="flex-direction:column;align-items:stretch;gap:10px">
+                    <div class="wizard-progress">
+                        <div class="wizard-bar">
+                            <div id="wizardBarFill" style="width:33%"></div>
+                        </div>
+                        <div style="display:flex;gap:8px;margin-top:6px">
+                            <div class="label step-ind" data-step="1">Name</div>
+                            <div class="label step-ind" data-step="2">Profile</div>
+                            <div class="label step-ind" data-step="3">Finish</div>
+                        </div>
+                    </div>
+
+                    <form id="wizardForm" class="form-grid">
+                        <div class="wizard-step" data-step="1">
+                            <div class="field"><input class="input" id="w_name" placeholder=" "><label
+                                    class="floating-label">Full name</label></div>
+                            <div class="field"><input class="input" id="w_email" placeholder=" "><label
+                                    class="floating-label">Email</label></div>
+                        </div>
+
+                        <div class="wizard-step" data-step="2" hidden>
+                            <div class="field"><input class="input" id="w_username" placeholder=" "><label
+                                    class="floating-label">Username</label></div>
+                            <div class="field"><input class="input" id="w_bio" placeholder=" "><label
+                                    class="floating-label">Short bio</label></div>
+                        </div>
+
+                        <div class="wizard-step" data-step="3" hidden>
+                            <div style="color:var(--muted)">Review & submit. Values will be shown here.</div>
+                            <pre id="wizardSummary"
+                                style="background:#07142a;padding:8px;border-radius:8px;color:#dfeeff"></pre>
+                        </div>
+
+                        <div style="display:flex;gap:8px;justify-content:flex-end">
+                            <button type="button" class="btn-outline" id="wizardBack">Back</button>
+                            <button type="button" class="btn-gradient" id="wizardNext">Next</button>
+                        </div>
+                    </form>
+                </div>
+
+                <pre><code class="language-html">&lt;form id="wizardForm"&gt;...multi-step; JS toggles .wizard-step visibility...&lt;/form&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#wizard-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Contact / Support -->
+            <div class="card" id="contact-card">
+                <h3>Contact / Support</h3>
+                <p style="color:var(--muted)">Message, priority, and optional file attachment with preview & upload
+                    progress.</p>
+
+                <div class="demo" style="flex-direction:column;gap:8px">
+                    <form id="contactForm" style="display:flex;flex-direction:column;gap:8px">
+                        <div class="field"><input class="input" id="ct_name" placeholder=" "><label
+                                class="floating-label">Your name</label></div>
+                        <div class="field"><input class="input" id="ct_email" placeholder=" "><label
+                                class="floating-label">Email</label></div>
+                        <div>
+                            <label style="color:var(--muted);font-weight:700">Priority</label>
+                            <div style="display:flex;gap:8px;margin-top:6px">
+                                <button type="button" class="pill active" data-pri="low">Low</button>
+                                <button type="button" class="pill" data-pri="normal">Normal</button>
+                                <button type="button" class="pill" data-pri="high">High</button>
+                            </div>
+                        </div>
+
+                        <textarea id="ct_message" rows="4" class="input" placeholder=" "
+                            style="resize:vertical"></textarea>
+
+                        <div style="display:flex;gap:8px;align-items:center">
+                            <label class="file-label small">
+                                <input type="file" id="ct_file" hidden />
+                                <span>Attach file</span>
+                            </label>
+                            <div id="filePreview" style="color:var(--muted)"></div>
+                        </div>
+
+                        <div
+                            style="width:100%;background:rgba(255,255,255,0.03);height:8px;border-radius:8px;overflow:hidden">
+                            <div id="fileProgress"
+                                style="width:0%;height:100%;background:linear-gradient(90deg,var(--p1),var(--accent));">
+                            </div>
+                        </div>
+
+                        <div style="display:flex;justify-content:space-between;align-items:center">
+                            <button class="btn-3d" type="submit">Send message</button>
+                            <div class="label" id="contactStatus"></div>
+                        </div>
+                    </form>
+                </div>
+
+                <pre><code class="language-html">&lt;form id="contactForm"&gt;...message + file upload with preview...&lt;/form&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#contact-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Settings -->
+            <div class="card" id="settings-card">
+                <h3>Account settings</h3>
+                <p style="color:var(--muted)">Toggles and selections. Inline save with saved toast.</p>
+
+                <div class="demo" style="flex-direction:column;gap:8px">
+                    <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+                        <div><strong>Notifications</strong>
+                            <div style="color:var(--muted)">Receive product updates</div>
+                        </div>
+                        <div class="toggle" id="notifToggle">
+                            <div class="knob"></div>
+                        </div>
+                    </div>
+
+                    <div style="display:flex;gap:12px;align-items:center;justify-content:space-between">
+                        <div><strong>Theme</strong>
+                            <div style="color:var(--muted)">Choose accent</div>
+                        </div>
+                        <select id="themeSelect" class="input" style="width:160px">
+                            <option value="default">Default</option>
+                            <option value="sun">Sun</option>
+                            <option value="ocean">Ocean</option>
+                        </select>
+                    </div>
+
+                    <div style="display:flex;justify-content:flex-end">
+                        <button class="btn-gradient" id="saveSettings">Save changes</button>
+                    </div>
+
+                    <div id="toast" class="toast" aria-hidden="true">Settings saved ✓</div>
+                </div>
+
+                <pre><code class="language-html">&lt;div class="toggle" id="notifToggle"&gt;&lt;div class="knob"&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#settings-card pre code">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/forms.js"></script>
+
+</body>
+
+</html>

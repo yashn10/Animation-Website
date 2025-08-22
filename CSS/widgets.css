@@ -1,0 +1,530 @@
+:root {
+    --bg: #071024;
+    --muted: #bfcbdc;
+    --p1: #4facfe;
+    --accent: #764ba2;
+    --glass: rgba(255, 255, 255, 0.02)
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+body {
+    font-family: Inter, Arial;
+    background: radial-gradient(1000px 400px at 10% 10%, rgba(79, 172, 254, 0.03), transparent), var(--bg);
+    color: #e6eef8;
+    padding-bottom: 80px
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background: var(--glass);
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.logo {
+    font-family: Montserrat;
+    background: linear-gradient(90deg, var(--p1), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700
+}
+
+nav a {
+    color: var(--muted);
+    margin-left: 12px;
+    text-decoration: none;
+    font-weight: 600
+}
+
+main {
+    max-width: 1100px;
+    margin: 28px auto;
+    padding: 0 18px
+}
+
+.hero {
+    background: var(--glass);
+    padding: 18px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 16px;
+    margin-top: 18px
+}
+
+.card {
+    background: var(--glass);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+.demo {
+    background: linear-gradient(180deg, #071426, #0b2136);
+    padding: 18px;
+    border-radius: 10px;
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+/* toggle / dark mode */
+.toggle {
+    width: 60px;
+    height: 34px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    position: relative;
+    cursor: pointer;
+    display: inline-block
+}
+
+.toggle .knob {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #fff;
+    left: 3px;
+    top: 3px;
+    transition: left .22s, background .22s
+}
+
+.toggle.dark {
+    background: linear-gradient(90deg, #ffd166, #ff7eb3)
+}
+
+.toggle.dark .knob {
+    left: 29px
+}
+
+/* burger -> x */
+.burger {
+    width: 46px;
+    height: 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer
+}
+
+.burger span {
+    height: 4px;
+    background: #e6eef8;
+    border-radius: 6px;
+    transition: transform .28s, opacity .28s
+}
+
+/* heart like */
+.heart {
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform .18s
+}
+
+.heart.liked {
+    color: #ff4b6e;
+    transform: scale(1.12)
+}
+
+/* bookmark anim */
+.bookmark {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #0b1220, #0e1a34);
+    display: grid;
+    place-items: center;
+    cursor: pointer
+}
+
+.bookmark.active {
+    background: linear-gradient(90deg, #ffcf6b, #ff7eb3);
+    color: #041426
+}
+
+/* rating stars */
+.stars {
+    display: flex;
+    gap: 6px
+}
+
+.star {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.12);
+    cursor: pointer
+}
+
+.star.active {
+    color: #ffd166;
+    transform: scale(1.08);
+    transition: transform .12s
+}
+
+.copy-btn {
+    background: linear-gradient(90deg, var(--p1), #00f2fe);
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: #041426;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.label {
+    color: var(--muted);
+    font-size: 0.9rem
+}
+
+/* ---------------- new widgets CSS ------------------ */
+
+/* Segmented control */
+.segmented {
+    position: relative;
+    display: inline-flex;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 6px;
+    border-radius: 12px;
+    align-items: center
+}
+
+.seg-item {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color .18s
+}
+
+.seg-item.active {
+    color: #041426
+}
+
+.seg-thumb {
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    width: 100px;
+    background: linear-gradient(90deg, var(--p1), var(--accent));
+    border-radius: 8px;
+    transition: transform .28s ease, width .22s;
+    z-index: 1;
+    transform-origin: left top;
+}
+
+/* tooltip */
+.tt {
+    position: relative;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 8px 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02)
+}
+
+.tt::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%) translateY(6px);
+    background: #071426;
+    padding: 8px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    color: #dfeeff;
+    font-size: 13px;
+    transition: all .18s;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5)
+}
+
+.tt:hover::after,
+.tt:focus::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0)
+}
+
+/* progress knob */
+.knob-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.progress-knob {
+    --size: 84px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    color: #dff7ff;
+    background: conic-gradient(var(--p1) calc(var(--percent) * 1%), rgba(255, 255, 255, 0.06) 0%);
+    box-shadow: inset 0 -6px 20px rgba(0, 0, 0, 0.4);
+    position: relative
+}
+
+.progress-knob::before {
+    content: "";
+    position: absolute;
+    width: 72%;
+    height: 72%;
+    border-radius: 50%;
+    background: linear-gradient(180deg, #071426, #081834)
+}
+
+/* toast2 (separate from forms toast) */
+.toast2 {
+    position: fixed;
+    right: 22px;
+    bottom: 100px;
+    background: linear-gradient(90deg, var(--p1), var(--accent));
+    color: #041426;
+    padding: 10px 14px;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    transform: translateY(18px) scale(.98);
+    opacity: 0;
+    transition: all .32s
+}
+
+.toast2.show {
+    transform: translateY(0) scale(1);
+    opacity: 1
+}
+
+/* tagbox */
+.tagbox {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 8px;
+    min-height: 44px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px
+}
+
+.tag {
+    background: linear-gradient(90deg, var(--p1), var(--accent));
+    color: #041426;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 700;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.tag button {
+    background: transparent;
+    border: none;
+    color: #041426;
+    font-weight: 900;
+    cursor: pointer
+}
+
+/* speed-dial */
+.speed-dial {
+    position: relative;
+    width: 80px;
+    height: 80px
+}
+
+.speed-dial .fab {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--p1), var(--accent));
+    color: #041426;
+    border: none;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5)
+}
+
+.speed-dial .fab-item {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    transform: translateY(8px) scale(.9);
+    transition: all .28s;
+    text-decoration: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.03)
+}
+
+.speed-dial.open .fab-item {
+    opacity: 1;
+    transform: translateY(0) scale(1)
+}
+
+.speed-dial.open .fab-item:nth-child(2) {
+    transform: translate(-56px, -6px)
+}
+
+.speed-dial.open .fab-item:nth-child(3) {
+    transform: translate(-96px, -36px)
+}
+
+.speed-dial.open .fab-item:nth-child(4) {
+    transform: translate(-56px, -64px)
+}
+
+/* popover */
+.popover {
+    position: absolute;
+    background: #071426;
+    padding: 8px;
+    border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 8px;
+    min-width: 140px
+}
+
+.popover a {
+    color: #dfeeff;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 8px
+}
+
+/* stepper */
+.stepper {
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 6px;
+    border-radius: 10px
+}
+
+.step-btn {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 800
+}
+
+.step-input {
+    width: 56px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    background: transparent;
+    color: #e6eef8
+}
+
+/* copy input small */
+#copyInput {
+    min-width: 220px;
+}
+
+#copyBtn {
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+
+/* skeleton mini */
+.skeleton-card-mini {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.015))
+}
+
+.s-line {
+    height: 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));
+    position: relative;
+    overflow: hidden
+}
+
+.s-line::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+    transform: translateX(-100%);
+    animation: shimmer 1.6s infinite
+}
+
+.s-title {
+    width: 60%;
+    height: 14px
+}
+
+.s-sub {
+    width: 40%
+}
+
+.s-thumb {
+    height: 80px;
+    width: 100%;
+    border-radius: 8px
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%)
+    }
+}
+
+/* small responsive */
+@media (max-width:720px) {
+    .progress-knob {
+        --size: 64px
+    }
+
+    .segmented {
+        padding: 6px
+    }
+
+    .speed-dial {
+        width: 64px;
+        height: 64px
+    }
+}

@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Widgets</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+    <link rel="stylesheet" href="../CSS/widgets.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Animatrix</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="navigation.html">Navigation</a>
+            <a href="cards.html">Cards</a>
+            <a href="loading.html">Loaders</a>
+            <a href="buttons.html">Buttons</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h2 style="margin:0;font-family:Montserrat">Widgets & Micro UI</h2>
+                <div style="color:var(--muted)">Toggles, burger→X, like animations, bookmarks, star rating.</div>
+            </div>
+        </section>
+
+        <div class="grid">
+
+            <!-- dark mode toggle -->
+            <div class="card">
+                <h3>Dark / Accent Toggle</h3>
+                <p style="color:var(--muted)">Toggle accent / theme (demo switches page tint).</p>
+                <div class="demo">
+                    <div class="toggle" id="toggle">
+                        <div class="knob"></div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="toggle" id="toggle"&gt;&lt;div class="knob"&gt;&lt;/div&gt;&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- burger -->
+            <div class="card">
+                <h3>Burger → X</h3>
+                <p style="color:var(--muted)">Animated burger icon morph to X for mobile.</p>
+                <div class="demo">
+                    <div class="burger" id="burger"><span></span><span></span><span></span></div>
+                </div>
+                <pre><code class="language-html">&lt;div class="burger" id="burger"&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- heart like -->
+            <div class="card">
+                <h3>Heart Like Animation</h3>
+                <p style="color:var(--muted)">Pulse + color change on like.</p>
+                <div class="demo">
+                    <div id="heart" class="heart">♥</div>
+                </div>
+                <pre><code class="language-html">&lt;div id="heart" class="heart"&gt;♥&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- bookmark -->
+            <div class="card">
+                <h3>Bookmark Animation</h3>
+                <p style="color:var(--muted)">Toggle bookmark with color fill.</p>
+                <div class="demo">
+                    <div id="bm" class="bookmark">🔖</div>
+                </div>
+                <pre><code class="language-html">&lt;div id="bm" class="bookmark"&gt;🔖&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- star rating -->
+            <div class="card">
+                <h3>Star Rating</h3>
+                <p style="color:var(--muted)">Click to set rating; hover preview.</p>
+                <div class="demo">
+                    <div class="stars" id="stars"><span class="star">★</span><span class="star">★</span><span
+                            class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+                </div>
+                <pre><code class="language-html">&lt;div class="stars" id="stars"&gt;&lt;span class="star"&gt;★&lt;/span&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Segmented Control -->
+            <div class="card">
+                <h3>Segmented Control</h3>
+                <p style="color:var(--muted)">Toggle between views — animated thumb.</p>
+                <div class="demo">
+                    <div class="segmented" id="segmented-1" role="tablist" aria-label="View toggle">
+                        <button class="seg-item active" data-val="grid" role="tab" aria-selected="true">Grid</button>
+                        <button class="seg-item" data-val="list" role="tab">List</button>
+                        <button class="seg-item" data-val="compact" role="tab">Compact</button>
+                        <div class="seg-thumb" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="segmented" id="segmented-1"&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#segmented-1">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Tooltip helper -->
+            <div class="card">
+                <h3>Tooltip (CSS)</h3>
+                <p style="color:var(--muted)">Simple, accessible tooltip using <code>data-tooltip</code>.</p>
+                <div class="demo" style="gap:18px">
+                    <button class="tt" data-tooltip="This is a tooltip">Hover me</button>
+                    <a class="tt" data-tooltip="Go to docs" href="#">Docs</a>
+                </div>
+                <pre><code class="language-html">&lt;button class="tt" data-tooltip="... "&gt;Hover&lt;/button&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Animated Progress Knob -->
+            <div class="card">
+                <h3>Progress Knob</h3>
+                <p style="color:var(--muted)">Circular progress controlled via JS (uses CSS conic-gradient).</p>
+                <div class="demo">
+                    <div class="knob-wrap">
+                        <div class="progress-knob" id="progressKnob1" style="--percent:45">45%</div>
+                        <div style="display:flex;gap:8px;margin-left:14px">
+                            <button class="btn-outline" data-action="dec" data-target="progressKnob1">-10</button>
+                            <button class="btn-outline" data-action="inc" data-target="progressKnob1">+10</button>
+                        </div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="progress-knob" id="progressKnob1"&gt;45%&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#progressKnob1">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Toast / Notification -->
+            <div class="card">
+                <h3>Toast Notification</h3>
+                <p style="color:var(--muted)">Lightweight toast with animated entrance.</p>
+                <div class="demo" style="flex-direction:column;gap:8px">
+                    <button class="btn-gradient" id="showToastBtn">Show toast</button>
+                    <div id="toast2" class="toast2" aria-hidden="true">Saved — changes applied ✓</div>
+                </div>
+                <pre><code class="language-html">&lt;button id="showToastBtn"&gt;Show toast&lt;/button&gt;&lt;div id="toast2"&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#showToastBtn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Tag input (chips) -->
+            <div class="card">
+                <h3>Tag / Chip Input</h3>
+                <p style="color:var(--muted)">Add/remove tags quickly (enter or comma).</p>
+                <div class="demo" style="flex-direction:column;gap:8px;align-items:stretch">
+                    <div class="tagbox" id="tagContainer"></div>
+                    <input id="tagInput" class="input" placeholder="Add a tag and press Enter" />
+                </div>
+                <pre><code class="language-html">&lt;div id="tagContainer"&gt;&lt;/div&gt;&lt;input id="tagInput"&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#tagInput">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Speed Dial (FAB) -->
+            <div class="card">
+                <h3>Speed Dial / FAB</h3>
+                <p style="color:var(--muted)">Floating action button with radial actions.</p>
+                <div class="demo" style="min-height:130px">
+                    <div class="speed-dial" id="speedDial">
+                        <button class="fab main" aria-label="Open actions">+</button>
+                        <a class="fab-item" href="#" title="Email">✉</a>
+                        <a class="fab-item" href="#" title="Bookmark">🔖</a>
+                        <a class="fab-item" href="#" title="Compose">✚</a>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div id="speedDial"&gt;...fab items...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Popover (contextual) -->
+            <div class="card">
+                <h3>Popover (contextual)</h3>
+                <p style="color:var(--muted)">Click to open a small popover menu.</p>
+                <div class="demo">
+                    <button id="popTrigger" class="btn-outline">Open menu ▾</button>
+                    <div id="popMenu" class="popover" role="menu" aria-hidden="true">
+                        <a href="#" role="menuitem">Edit</a>
+                        <a href="#" role="menuitem">Duplicate</a>
+                        <a href="#" role="menuitem">Remove</a>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;button id="popTrigger"&gt;Open menu&lt;/button&gt;&lt;div id="popMenu"&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#popTrigger">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Numeric Stepper -->
+            <div class="card">
+                <h3>Numeric Stepper</h3>
+                <p style="color:var(--muted)">Accessible stepper with long-press support.</p>
+                <div class="demo">
+                    <div class="stepper" id="numStepper">
+                        <button class="step-btn" data-op="dec">-</button>
+                        <input class="step-input" type="text" value="1" inputmode="numeric" />
+                        <button class="step-btn" data-op="inc">+</button>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div id="numStepper"&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#numStepper">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Copyable text input -->
+            <div class="card">
+                <h3>Copy Input</h3>
+                <p style="color:var(--muted)">Quick copy-to-clipboard with feedback.</p>
+                <div class="demo" style="align-items:stretch">
+                    <div style="display:flex;gap:8px;align-items:center">
+                        <input id="copyInput" class="input" value="https://animatrix.design/component" />
+                        <button class="btn-outline" id="copyBtn">Copy</button>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;input id="copyInput" value="..."&gt;&lt;button id="copyBtn"&gt;Copy&lt;/button&gt;</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#copyInput">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Skeleton loader card -->
+            <div class="card">
+                <h3>Skeleton Loader</h3>
+                <p style="color:var(--muted)">Shimmering placeholder for loading states.</p>
+                <div class="demo">
+                    <div class="skeleton-card-mini">
+                        <div class="s-line s-title"></div>
+                        <div class="s-line s-sub"></div>
+                        <div class="s-line s-thumb"></div>
+                    </div>
+                </div>
+                <pre><code class="language-html">&lt;div class="skeleton-card-mini"&gt;...&lt;/div&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/widgets.js"></script>
+
+</body>
+
+</html>

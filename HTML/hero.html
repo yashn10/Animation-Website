@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Hero Animations</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+    <link rel="stylesheet" href="../CSS/hero.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Animatrix</div>
+        <nav>
+            <a href="Website.html">Home</a>
+            <a href="buttons.html">Buttons</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="shape s1"></div>
+            <div class="shape s2"></div>
+            <svg class="blob" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                <g transform="translate(300,300)">
+                    <path
+                        d="M120,-140C160,-90,172,-30,164,30C156,90,128,150,80,170C32,190,-30,170,-90,140C-150,110,-200,70,-200,20C-200,-30,-150,-80,-110,-130C-70,-180,-35,-200,20,-220C75,-240,85,-190,120,-140Z"
+                        fill="#5ad1ff" />
+                </g>
+            </svg>
+
+            <div class="left">
+                <div class="eyebrow" style="color:var(--p1);font-weight:700">New • UI library</div>
+                <h1 class="h1">Pixel-perfect UI, <span class="split"><span class="part">built</span> <span
+                            class="part">for</span> <span class="part">designers</span></span></h1>
+                <div style="height:10px"></div>
+                <div class="sub">Beautiful, performant components with copy-ready code. <span class="typewriter"
+                        id="typewriter"></span></div>
+                <div style="margin-top:18px"><button class="copy-btn" id="cta">Try Demo</button></div>
+            </div>
+
+            <div class="layer" id="parallax" aria-hidden="true">
+                <div class="card">Floating card</div>
+            </div>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <h4>Typewriter headline</h4>
+                <div class="demo">The headline types out words — used in hero for attention.</div>
+                <pre><code class="language-html">&lt;span id="typewriter"&gt;&lt;/span&gt; // small JS cycles words and types</code></pre>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><button
+                        class="copy-btn">Copy</button>
+                    <div style="color:var(--muted)">HTML • JS</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4>Split reveal</h4>
+                <div class="demo">Hover the hero to reveal split text using translateY animation.</div>
+                <pre><code class="language-html">.split .part { transform: translateY(110%); transition: transform .6s; } .hero:hover .split .part { transform: translateY(0); }</code></pre>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><button
+                        class="copy-btn">Copy</button>
+                    <div style="color:var(--muted)">CSS</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4>Parallax layer</h4>
+                <div class="demo">Mouse-driven parallax for UI depth.</div>
+                <pre><code class="language-html">document.getElementById('hero').addEventListener('mousemove', e =&gt; { /* translate layers */ })</code></pre>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><button
+                        class="copy-btn">Copy</button>
+                    <div style="color:var(--muted)">JS</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h4>SVG blob</h4>
+                <div class="demo">Subtle blob shape using an SVG path and opacity for depth.</div>
+                <pre><code class="language-html">&lt;svg class="blob"&gt;...&lt;/svg&gt;</code></pre>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><button
+                        class="copy-btn">Copy</button>
+                    <div style="color:var(--muted)">SVG • CSS</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/hero.js"></script>
+
+</body>
+
+</html>

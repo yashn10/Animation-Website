@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Cards & Content</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism for code highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="../CSS/cards.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="brand">
+            <div class="logo">Animatrix</div>
+            <div style="color:var(--muted);font-weight:600;font-size:0.9rem;margin-left:6px">Cards & Content</div>
+        </div>
+
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="navigation.html">Navigation</a>
+            <a href="cards.html" aria-current="page" style="color:#fff">Cards</a>
+            <a href="loading.html">Loaders</a>
+            <a href="text and background.html">Text & BG</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" aria-labelledby="cards-title">
+            <div>
+                <h1 id="cards-title">Cards & Content — ready-to-copy components</h1>
+                <p>Each card below has a live demo and the full code block. Click <strong>Copy</strong> to paste into
+                    your project — customize colors and sizes as needed.</p>
+            </div>
+            <div style="text-align:right">
+                <div style="color:var(--muted);font-weight:600">Pro tip</div>
+                <div style="color:var(--muted);font-size:0.94rem">Prefer separated files? Use the copy button to paste
+                    into your editor and split CSS/JS into files.</div>
+            </div>
+        </section>
+
+        <section class="grid" aria-label="Card components grid">
+
+            <!-- 1: 3D Flip Card -->
+            <article class="snippet" id="flip-card">
+                <h3>3D Flip Card</h3>
+                <p class="type-label">Hover to flip — HTML + CSS</p>
+                <div class="demo" aria-hidden="true">
+                    <div class="card-3d">
+                        <div class="card-inner">
+                            <div class="card-face card-front">
+                                <div>Front</div>
+                            </div>
+                            <div class="card-face card-back">
+                                <div>Back</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- 3D Flip Card --&gt;
+&lt;div class="card-3d"&gt;
+  &lt;div class="card-inner"&gt;
+    &lt;div class="card-face card-front"&gt;Front&lt;/div&gt;
+    &lt;div class="card-face card-back"&gt;Back&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS (paste into &lt;style&gt;) --&gt;
+.card-3d { perspective:1000px; width:260px; height:160px; }
+.card-inner { width:100%; height:100%; transform-style:preserve-3d; transition:transform .8s ease-in-out; border-radius:12px; overflow:hidden; }
+.card-3d:hover .card-inner { transform:rotateY(180deg); }
+.card-face { position:absolute; width:100%; height:100%; display:flex; align-items:center; justify-content:center; backface-visibility:hidden; color:#fff; font-weight:700; }
+.card-front { background: linear-gradient(135deg,#667eea,#764ba2); }
+.card-back { background: linear-gradient(135deg,#ff758c,#ff7eb3); transform:rotateY(180deg); }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 2: Shine Card -->
+            <article class="snippet" id="shine-card">
+                <h3>Hover Shine Card</h3>
+                <p class="type-label">Subtle shine on hover — HTML + CSS</p>
+                <div class="demo">
+                    <div class="card-shine">
+                        <div style="font-weight:700">Hover Me</div>
+                        <div style="font-size:0.85rem;color:var(--muted)">Enjoy the shine</div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Shine Card --&gt;
+&lt;div class="card-shine"&gt;
+  &lt;h3&gt;Hover Me&lt;/h3&gt;
+  &lt;p&gt;Enjoy the shine&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.card-shine { width:260px; padding:18px; border-radius:10px; background:#0f1830; color:#fff; position:relative; overflow:hidden; }
+.card-shine::before { content:''; position:absolute; top:-60%; left:-40%; width:200%; height:220%; background: linear-gradient(45deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); transform:rotate(25deg); transition: transform .8s; }
+.card-shine:hover::before { transform: translateX(50%) rotate(25deg); }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 3: Slide Reveal Info -->
+            <article class="snippet" id="slide-card">
+                <h3>Slide-Reveal Info Card</h3>
+                <p class="type-label">Reveal details on hover — HTML + CSS</p>
+                <div class="demo">
+                    <div class="card-slide">
+                        <div class="card-content">
+                            <div style="font-weight:700">Product</div>
+                            <div style="color:var(--muted);font-size:0.9rem">Short intro...</div>
+                        </div>
+                        <div class="card-detail">
+                            <div style="font-size:0.9rem;color:#dfeeff">Hidden detail slides up — perfect for product
+                                teasers.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Slide Reveal Card --&gt;
+&lt;div class="card-slide"&gt;
+  &lt;div class="card-content"&gt;...&lt;/div&gt;
+  &lt;div class="card-detail"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.card-slide { width:260px; height:160px; position:relative; border-radius:12px; overflow:hidden; background: linear-gradient(135deg,#121826,#1b2740); color:#fff; }
+.card-content { position:absolute; bottom:0; width:100%; padding:16px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent); transition: transform .45s ease; }
+.card-detail { position:absolute; bottom:-100%; left:0; width:100%; background:#20273b; padding:16px; transition: bottom .45s ease; }
+.card-slide:hover .card-content { transform: translateY(-100%); }
+.card-slide:hover .card-detail { bottom:0; }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 4: Splitting Flip Card -->
+            <article class="snippet" id="split-card">
+                <h3>Splitting Flip Card</h3>
+                <p class="type-label">Split panels rotate — CSS-only</p>
+                <div class="demo">
+                    <div class="card-split">
+                        <div class="split-left">Left</div>
+                        <div class="split-right">Right</div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Splitting Flip Card --&gt;
+&lt;div class="card-split"&gt;
+  &lt;div class="split-left"&gt;Left&lt;/div&gt;
+  &lt;div class="split-right"&gt;Right&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.card-split { width:260px; height:160px; perspective:1200px; position:relative; }
+.split-left, .split-right { position:absolute; top:0; width:50%; height:100%; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; transition: transform .6s ease; backface-visibility:hidden; border-radius:12px; }
+.split-left { left:0; background: linear-gradient(180deg,#4facfe,#2b9df0); transform-origin:right center; }
+.split-right { right:0; background: linear-gradient(180deg,#00f2fe,#00c6ff); transform-origin:left center; }
+.card-split:hover .split-left { transform: rotateY(-90deg); }
+.card-split:hover .split-right { transform: rotateY(90deg); }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 5: Tilt (parallax) Card -->
+            <article class="snippet" id="tilt-card">
+                <h3>Parallax Tilt Card</h3>
+                <p class="type-label">Mouse-driven tilt — HTML + CSS + small JS</p>
+                <div class="demo">
+                    <div class="tilt-card" data-tilt>
+                        <div class="tilt-inner">Tilt Me</div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Tilt Card --&gt;
+&lt;div class="tilt-card" data-tilt&gt;
+  &lt;div class="tilt-inner"&gt;Tilt Me&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.tilt-card { width:260px; height:160px; perspective:900px; }
+.tilt-inner { width:100%; height:100%; border-radius:12px; background:linear-gradient(135deg,#667eea,#764ba2); display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; transition: transform 0.1s ease-out; box-shadow: 0 8px 22px rgba(0,0,0,0.5); }
+
+&lt;!-- JS (small) --&gt;
+const el = document.querySelector('[data-tilt]'); // attaches JS to container
+el.addEventListener('mousemove', (e) =&gt; {
+  const rect = el.getBoundingClientRect();
+  const x = e.clientX - rect.left - rect.width/2;
+  const y = e.clientY - rect.top - rect.height/2;
+  const inner = el.querySelector('.tilt-inner');
+  inner.style.transform = `rotateY(${x/20}deg) rotateX(${-y/20}deg)`;
+});
+el.addEventListener('mouseleave', () =&gt; inner.style.transform = 'rotateY(0) rotateX(0)'; );</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS • JS</div>
+                </div>
+            </article>
+
+            <!-- 6: Gradient Border Wipe -->
+            <article class="snippet" id="wipe-card">
+                <h3>Gradient Border Wipe</h3>
+                <p class="type-label">Animated gradient border — CSS-only</p>
+                <div class="demo">
+                    <div class="wipe-card">
+                        <div style="font-weight:700">Hover Border</div>
+                        <div style="color:var(--muted);font-size:0.87rem">Gradient wipe effect</div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Wipe Border Card --&gt;
+&lt;div class="wipe-card"&gt;
+  &lt;h3&gt;Hover Border&lt;/h3&gt;
+  &lt;p&gt;Gradient wipe effect&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.wipe-card { position:relative; padding:18px; border-radius:12px; background:#071427; overflow:hidden; border:1px solid rgba(255,255,255,0.02); }
+.wipe-card::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:linear-gradient(120deg,#ff416c,#ff4b2b,#4facfe,#00f2fe); transform: rotate(0deg); transition: transform 3s linear; opacity:0.25; }
+.wipe-card:hover::before { transform: rotate(180deg); opacity:1; }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 7: Expand-on-hover Card -->
+            <article class="snippet" id="expand-card">
+                <h3>Expand-On-Hover Card</h3>
+                <p class="type-label">Grow & reveal content — CSS</p>
+                <div class="demo">
+                    <div class="expand-card">
+                        <div style="font-weight:700">Hover to Expand</div>
+                        <div style="color:var(--muted);font-size:0.9rem">Short description</div>
+                        <div class="long" style="color:#dfeeff">Here’s the extra content revealed on hover—great for
+                            teasers!</div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Expand Card --&gt;
+&lt;div class="expand-card"&gt;
+  &lt;h3&gt;Hover to Expand&lt;/h3&gt;
+  &lt;p class="short"&gt;Short description&lt;/p&gt;
+  &lt;p class="long"&gt;Here’s the extra content revealed on hover—great for teasers!&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.expand-card { width:260px; padding:16px; border-radius:12px; background:#0b1220; transition: all .4s ease; overflow:hidden; }
+.expand-card .long { max-height:0; opacity:0; transition: all .4s ease; }
+.expand-card:hover { padding:20px; }
+.expand-card:hover .long { max-height:200px; opacity:1; margin-top:10px; }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+            <!-- 8: Mask Image Reveal -->
+            <article class="snippet" id="mask-card">
+                <h3>Image Mask Reveal</h3>
+                <p class="type-label">Slide mask & scale image — HTML + CSS</p>
+                <div class="demo">
+                    <div class="mask-card">
+                        <div class="mask-panel"></div>
+                        <img src="https://source.unsplash.com/400x300?nature" alt="sample" />
+                        <div class="mask-content">
+                            <div style="font-weight:700">Nature</div>
+                        </div>
+                    </div>
+                </div>
+
+                <pre><code class="language-html">&lt;!-- Mask Reveal Card --&gt;
+&lt;div class="mask-card"&gt;
+  &lt;div class="mask-panel"&gt;&lt;/div&gt;
+  &lt;img src=&quot;https://source.unsplash.com/400x300?nature&quot; alt=&quot;sample&quot;&gt;
+  &lt;div class=&quot;mask-content&quot;&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- CSS --&gt;
+.mask-card { width:260px; height:160px; position:relative; border-radius:12px; overflow:hidden; }
+.mask-card img { width:100%; height:100%; object-fit:cover; transition: transform .6s ease; }
+.mask-card .mask-panel { position:absolute; top:0; left:0; width:100%; height:100%; background:#071427; transition: transform .6s ease; }
+.mask-card:hover .mask-panel { transform: translateX(100%); }
+.mask-card:hover img { transform: scale(1.08); }</code></pre>
+
+                <div class="actions">
+                    <div class="left-actions"><button class="copy-btn">Copy</button></div>
+                    <div class="type-label">HTML • CSS</div>
+                </div>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Prism -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/cards.js"></script>
+
+</body>
+
+</html>

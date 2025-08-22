@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Buttons</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+    <link rel="stylesheet" href="../CSS/buttons.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">Animatrix</div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="navigation.html">Navigation</a>
+            <a href="cards.html">Cards</a>
+            <a href="loading.html">Loaders</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h2 style="margin:0;font-family:Montserrat">Buttons — modern & micro interactions</h2>
+                <div style="color:var(--muted);margin-top:6px">Copy-ready buttons: neon, magnetic, ripple, 3D and more.
+                </div>
+            </div>
+            <div style="text-align:right;color:var(--muted)"><small>Click demo then Copy</small></div>
+        </section>
+
+        <div class="grid" style="margin-top:18px">
+
+            <!-- Neon -->
+            <div class="card">
+                <h3>Neon Glow Button</h3>
+                <p>Strong neon glow with soft blur — great for CTA.</p>
+                <div class="demo"><button class="btn-neon" id="neon">Get started</button></div>
+                <pre><code class="language-html">&lt;button class="btn-neon"&gt;Get started&lt;/button&gt;
+
+/* CSS: .btn-neon with blurred gradient ::before for glow */</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#neon">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Gradient -->
+            <div class="card">
+                <h3>Solid Gradient</h3>
+                <p>Clean gradient with subtle shadow.</p>
+                <div class="demo"><button class="btn-gradient">Start Trial</button></div>
+                <pre><code class="language-html">&lt;button class="btn-gradient"&gt;Start Trial&lt;/button&gt;
+
+/* CSS: .btn-gradient uses linear-gradient and box-shadow */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Magnetic -->
+            <div class="card">
+                <h3>Magnetic Button</h3>
+                <p>Subtle magnetic attraction to cursor (JS-based).</p>
+                <div class="demo"><button class="btn-magnetic" id="magnetic">Play demo</button></div>
+                <pre><code class="language-html">&lt;button class="btn-magnetic" id="magnetic"&gt;Play demo&lt;/button&gt;
+
+/* small JS moves button towards cursor using transform */</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#magnetic">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Ripple -->
+            <div class="card">
+                <h3>Ripple Effect</h3>
+                <p>Classic material-style ripple with soft color.</p>
+                <div class="demo"><button class="btn-ripple" id="ripple-1">Send</button></div>
+                <pre><code class="language-html">&lt;button class="btn-ripple"&gt;Send&lt;/button&gt;
+
+/* JS creates .ripple-circle at click position and animates */</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#ripple-1">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- 3D pressed -->
+            <div class="card">
+                <h3>3D Press Button</h3>
+                <p>App-like tactile press with realistic shadow.</p>
+                <div class="demo"><button class="btn-3d">Confirm</button></div>
+                <pre><code class="language-html">&lt;button class="btn-3d"&gt;Confirm&lt;/button&gt;
+
+/* CSS: .btn-3d uses inner-shadow inset and translate on :active */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Outline animate -->
+            <div class="card">
+                <h3>Animated Outline</h3>
+                <p>Subtle gradient wipe across outline on hover.</p>
+                <div class="demo"><button class="btn-outline">Learn more</button></div>
+                <pre><code class="language-html">&lt;button class="btn-outline"&gt;Learn more&lt;/button&gt;
+
+/* CSS uses ::after gradient bar that moves on hover */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Icon with badge -->
+            <div class="card">
+                <h3>Icon button + Badge</h3>
+                <p>Compact icon button with notification badge.</p>
+                <div class="demo"><button class="icon-btn" aria-label="Notifications"><span
+                            class="badge">3</span>🔔</button></div>
+                <pre><code class="language-html">&lt;button class="icon-btn"&gt;🔔&lt;span class="badge"&gt;3&lt;/span&gt;&lt;/button&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Ghost -->
+            <div class="card">
+                <h3>Ghost / Link Button</h3>
+                <p>Low-contrast link-style button for subtle actions.</p>
+                <div class="demo"><button class="btn-ghost">More options</button></div>
+                <pre><code class="language-html">&lt;button class="btn-ghost"&gt;More options&lt;/button&gt;</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Liquid Button -->
+            <div class="card">
+                <h3>Liquid Button</h3>
+                <p>Fluid-like hover animation with waves.</p>
+                <div class="demo"><button class="btn-liquid">Explore</button></div>
+                <pre><code class="language-html">&lt;button class="btn-liquid"&gt;Explore&lt;/button&gt;
+
+/* CSS: liquid ::before + ::after blobs animated */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Glassmorphism -->
+            <div class="card">
+                <h3>Glassmorphism</h3>
+                <p>Frosted glass effect with backdrop blur.</p>
+                <div class="demo"><button class="btn-glass">Dashboard</button></div>
+                <pre><code class="language-html">&lt;button class="btn-glass"&gt;Dashboard&lt;/button&gt;
+
+/* CSS: backdrop-filter + transparent gradient */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Gradient Border -->
+            <div class="card">
+                <h3>Gradient Border</h3>
+                <p>Animated gradient border with transparent background.</p>
+                <div class="demo"><button class="btn-border-gradient">Sign up</button></div>
+                <pre><code class="language-html">&lt;button class="btn-border-gradient"&gt;Sign up&lt;/button&gt;
+
+/* CSS: border-image-source linear-gradient + animation */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Loading Button -->
+            <div class="card">
+                <h3>Loading Button</h3>
+                <p>Press to show loader inside button.</p>
+                <div class="demo"><button class="btn-loading" id="btnLoad">Submit</button></div>
+                <pre><code class="language-html">&lt;button class="btn-loading" id="btnLoad"&gt;Submit&lt;/button&gt;
+
+/* JS swaps text with spinner */</code></pre>
+                <div class="actions"><button class="copy-btn" data-target="#btnLoad">Copy</button>
+                    <div class="label">HTML • CSS • JS</div>
+                </div>
+            </div>
+
+            <!-- Split Gradient -->
+            <div class="card">
+                <h3>Split Gradient</h3>
+                <p>Half gradient reveal from center on hover.</p>
+                <div class="demo"><button class="btn-split">Join Now</button></div>
+                <pre><code class="language-html">&lt;button class="btn-split"&gt;Join Now&lt;/button&gt;
+
+/* CSS: ::before + ::after with opposite gradient */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+            <!-- Morphing Button -->
+            <div class="card">
+                <h3>Morphing Shape</h3>
+                <p>Rounded → pill morph on hover.</p>
+                <div class="demo"><button class="btn-morph">Contact</button></div>
+                <pre><code class="language-html">&lt;button class="btn-morph"&gt;Contact&lt;/button&gt;
+
+/* CSS: border-radius animated smoothly */</code></pre>
+                <div class="actions"><button class="copy-btn">Copy</button>
+                    <div class="label">HTML • CSS</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Prism + small JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/buttons.js"></script>
+
+</body>
+
+</html>

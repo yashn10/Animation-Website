@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Animatrix · Navigation Components (Expanded)</title>
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Montserrat:wght@600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Prism -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+    <link rel="stylesheet" href="../CSS/navigation.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">
+            <div class="logo">Animatrix</div>
+            <div style="color:var(--muted);font-weight:600;font-size:0.95rem;margin-left:6px">Navigation Components
+            </div>
+        </div>
+
+        <nav class="topnav" aria-label="Primary">
+            <a href="home.html">Home</a>
+            <a href="cards.html">Cards</a>
+            <a href="loading.html">Loaders</a>
+            <a href="navigation.html" aria-current="page" style="color:#fff">Navigation</a>
+            <a href="text and background.html">Text & BG</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="hero" aria-labelledby="nav-hero">
+            <div>
+                <h1 id="nav-hero">Navigation & Menus — patterns & components</h1>
+                <p class="lead">Expanded set of modern navigation components with polished visuals and accessibility in
+                    mind. Click <strong>Copy</strong> to grab full code.</p>
+            </div>
+            <div style="text-align:right">
+                <div style="color:var(--muted);font-weight:600">Docs-style</div>
+                <div style="color:var(--muted);font-size:0.95rem">More components, clear demos, and ready-to-use code.
+                </div>
+            </div>
+        </section>
+
+        <div class="docs">
+            <aside class="component-list" aria-label="Component index">
+                <h3>Components</h3>
+                <a href="#topbar">Topbar (search & profile)</a>
+                <a href="#center-nav">Centered Brand Nav</a>
+                <a href="#pills">Pill Nav</a>
+                <a href="#tabs">Tabs</a>
+                <a href="#breadcrumbs">Breadcrumbs</a>
+                <a href="#pagination">Pagination</a>
+                <a href="#bottom-nav">Bottom Nav (mobile)</a>
+                <a href="#offcanvas">Off-canvas Panel</a>
+                <a href="#improved-sidebar">Improved Sidebar (collapsible)</a>
+                <a href="#nested-sidebar">Nested / Accordion Sidebar</a>
+                <a href="#mega-menu">Mega Menu</a>
+                <a href="#flyout">Flyout / Context Menu</a>
+                <a href="#radial-fab">Radial FAB</a>
+                <a href="#overlay">Fullscreen Overlay</a>
+                <a href="#hamburger-sidebar">Hamburger Sidebar</a>
+            </aside>
+
+            <div class="content">
+
+                <!-- TOPBAR -->
+                <section id="topbar" class="section">
+                    <h2>Topbar with Search & Profile</h2>
+                    <p class="lead">Header with inline search and profile avatar — common in dashboards.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" aria-hidden="true">
+                            <div class="topbar" style="width:100%;">
+                                <div class="left">
+                                    <div style="font-weight:700">My App</div>
+                                    <div class="search" style="margin-left:10px;">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.5"
+                                                stroke-linecap="round" />
+                                        </svg>
+                                        <input placeholder="Search..." />
+                                    </div>
+                                </div>
+                                <div class="profile">
+                                    <div style="color:var(--muted);font-weight:600">Workspace</div>
+                                    <div class="avatar">AK</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Topbar HTML --&gt;
+&lt;header class="topbar"&gt;
+  &lt;div class="left"&gt;
+    &lt;div&gt;My App&lt;/div&gt;
+    &lt;div class="search"&gt;&lt;input placeholder="Search..." /&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="profile"&gt;&lt;div class="avatar"&gt;AK&lt;/div&gt;&lt;/div&gt;
+&lt;/header&gt;
+
+&lt;!-- CSS: basic styles provided above (search container, avatar) --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#topbar pre code">Copy</button>
+                            <div class="label">HTML • CSS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CENTERED NAV -->
+                <section id="center-nav" class="section">
+                    <h2>Centered Brand Navigation</h2>
+                    <p class="lead">Brand-centered navigation layout for marketing sites.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo">
+                            <nav class="center-nav">
+                                <ul>
+                                    <li><a href="#">Docs</a></li>
+                                    <li><a href="#">Components</a></li>
+                                    <li><a href="#" style="font-weight:800;color:#fff">Animatrix</a></li>
+                                    <li><a href="#">Resources</a></li>
+                                    <li><a href="#">About</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Centered nav --&gt;
+&lt;nav class="center-nav"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Docs&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Components&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=\"#\" style=\"font-weight:800;color:#fff\"&gt;Brand&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#center-nav pre code">Copy</button>
+                            <div class="label">HTML • CSS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PILLS -->
+                <section id="pills" class="section">
+                    <h2>Pill Navigation</h2>
+                    <p class="lead">Tabbed-like pill navigation used for filters or quick switches.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="flex-direction:column;gap:8px">
+                            <div class="pills">
+                                <div class="pill active">All</div>
+                                <div class="pill">Design</div>
+                                <div class="pill">Code</div>
+                                <div class="pill">Inspiration</div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Pills --&gt;
+&lt;div class="pills"&gt;
+  &lt;div class="pill active"&gt;All&lt;/div&gt;
+  &lt;div class="pill"&gt;Design&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- JS: toggle .active on click --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#pills pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- TABS -->
+                <section id="tabs" class="section">
+                    <h2>Tabs (Component)</h2>
+                    <p class="lead">Content tabs with active state and panels.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="flex-direction:column;align-items:stretch;gap:8px">
+                            <div class="tabs" role="tablist">
+                                <div class="tab active" data-tab="1">Overview</div>
+                                <div class="tab" data-tab="2">Docs</div>
+                                <div class="tab" data-tab="3">Examples</div>
+                            </div>
+                            <div class="tab-panel" id="tab-1">Overview content — quick summary.</div>
+                            <div class="tab-panel" id="tab-2" hidden>Docs content goes here.</div>
+                            <div class="tab-panel" id="tab-3" hidden>Examples content goes here.</div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Tabs HTML --&gt;
+&lt;div class="tabs" role="tablist"&gt;
+  &lt;div class="tab active" data-tab="1"&gt;Overview&lt;/div&gt;
+  &lt;div class="tab" data-tab="2"&gt;Docs&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="tab-1"&gt;...&lt;/div&gt; &lt;div id="tab-2" hidden&gt;...&lt;/div&gt;
+
+&lt;!-- JS: switch active class and hide/show panels (provided in page script) --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#tabs pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BREADCRUMBS -->
+                <section id="breadcrumbs" class="section">
+                    <h2>Breadcrumbs</h2>
+                    <p class="lead">Simple breadcrumb trail for documentation or nested pages.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo">
+                            <div class="breadcrumbs"><a href="#">Home</a> <span style="opacity:.6">/</span> <a
+                                    href="#">Docs</a> <span style="opacity:.6">/</span> <span
+                                    style="color:#fff">Components</span></div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Breadcrumbs --&gt;
+&lt;nav class="breadcrumbs"&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt; &lt;span&gt;/&lt;/span&gt;
+  &lt;a href="#"&gt;Docs&lt;/a&gt; &lt;span&gt;/&span; &lt;span&gt;Components&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#breadcrumbs pre code">Copy</button>
+                            <div class="label">HTML • CSS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGINATION -->
+                <section id="pagination" class="section">
+                    <h2>Pagination</h2>
+                    <p class="lead">Accessible pagination UI with active state.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo">
+                            <div class="pagination">
+                                <div class="page">&lt;</div>
+                                <div class="page">1</div>
+                                <div class="page active">2</div>
+                                <div class="page">3</div>
+                                <div class="page">...</div>
+                                <div class="page">10</div>
+                                <div class="page">&gt;</div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Pagination --&gt;
+&lt;div class="pagination"&gt;
+  &lt;div class="page"&gt;&lt;&lt;/div&gt;
+  &lt;div class="page"&gt;1&lt;/div&gt;
+  &lt;div class="page active"&gt;2&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#pagination pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- BOTTOM NAV -->
+                <section id="bottom-nav" class="section">
+                    <h2>Bottom Navigation (Mobile)</h2>
+                    <p class="lead">Floating rounded bottom navigation for mobile flows.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="min-height:60px;position:relative;">
+                            <div class="bottom-nav" aria-hidden="true">
+                                <a href="#" title="Home">🏠</a>
+                                <a href="#" title="Search">🔍</a>
+                                <a href="#" title="Create">＋</a>
+                                <a href="#" title="Notifications">🔔</a>
+                                <a href="#" title="Profile">👤</a>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Bottom nav --&gt;
+&lt;div class="bottom-nav"&gt;
+  &lt;a href="#"&gt;🏠&lt;/a&gt; ... &lt;/div&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#bottom-nav pre code">Copy</button>
+                            <div class="label">HTML • CSS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OFFCANVAS -->
+                <section id="offcanvas" class="section">
+                    <h2>Off-canvas Right Panel</h2>
+                    <p class="lead">Slide-in right panel for settings, quick actions or carts.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="flex-direction:column;gap:8px">
+                            <button id="open-offcanvas" class="copy-btn"
+                                style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Open
+                                Panel</button>
+                            <div id="offcanvas" class="offcanvas" aria-hidden="true">
+                                <h3 style="color:#fff;margin-bottom:12px">Quick settings</h3>
+                                <div style="color:var(--muted)">Place settings or content here.</div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Offcanvas --&gt;
+&lt;button id="open-offcanvas"&gt;Open Panel&lt;/button&gt;
+&lt;div id="offcanvas" class="offcanvas"&gt;...&lt;/div&gt;
+
+&lt;!-- JS toggles .open on the .offcanvas element --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#offcanvas pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- IMPROVED SIDEBAR (COLLAPSIBLE SECTIONS) -->
+                <section id="improved-sidebar" class="section">
+                    <h2>Improved Sidebar — Collapsible Groups</h2>
+                    <p class="lead">A documentation-style sidebar with grouped sections and collapse/expand behaviour.
+                    </p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="align-items:flex-start;min-height:160px">
+                            <div class="doc-sidebar">
+                                <div class="sb-section" id="sb-1">
+                                    <div class="sb-header">Getting started <span>▾</span></div>
+                                    <div class="sb-items"><a href="#">Install</a><a href="#">Quickstart</a><a
+                                            href="#">Koncepts</a></div>
+                                </div>
+                                <div class="sb-section open" id="sb-2">
+                                    <div class="sb-header">Components <span>▾</span></div>
+                                    <div class="sb-items"><a href="#">Buttons</a><a href="#">Navs</a><a
+                                            href="#">Cards</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Doc sidebar --&gt;
+&lt;div class="doc-sidebar"&gt;
+  &lt;div class="sb-section"&gt;
+    &lt;div class="sb-header"&gt;Group&lt;/div&gt;
+    &lt;div class="sb-items"&gt;&lt;a&gt;Item&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- JS toggles .open on .sb-section to reveal .sb-items --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#improved-sidebar pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- NESTED / ACCORDION SIDEBAR -->
+                <section id="nested-sidebar" class="section">
+                    <h2>Nested / Accordion Sidebar</h2>
+                    <p class="lead">Sidebar with nested groups (accordion) for deeper navigation.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="align-items:flex-start">
+                            <div class="nested-list">
+                                <div class="group">
+                                    <div class="group-header">Products <span>▾</span></div>
+                                    <div class="group-items"><a href="#">Dashboard</a><a href="#">CMS</a></div>
+                                </div>
+                                <div class="group open">
+                                    <div class="group-header">Integrations <span>▾</span></div>
+                                    <div class="group-items"><a href="#">API</a><a href="#">Webhooks</a></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Nested sidebar --&gt;
+&lt;div class="nested-list"&gt;
+  &lt;div class="group"&gt;
+    &lt;div class="group-header"&gt;Products&lt;/div&gt;
+    &lt;div class="group-items"&gt;&lt;a&gt;Dashboard&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- JS toggles .open on .group --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#nested-sidebar pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- MEGA MENU (IMPROVED) -->
+                <section id="mega-menu" class="section">
+                    <h2>Improved Mega Menu</h2>
+                    <p class="lead">Large multi-column dropdown — great for marketing & docs with many links.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo">
+                            <nav class="mega-nav">
+                                <ul>
+                                    <li class="has-mega">
+                                        <a href="#">Products ▾</a>
+                                        <div class="mega-content" style="display:flex;gap:16px">
+                                            <div class="col">
+                                                <h4 style="color:var(--primary-1)">Web</h4><a href="#">Dashboard</a><a
+                                                    href="#">CMS</a>
+                                            </div>
+                                            <div class="col">
+                                                <h4 style="color:var(--primary-1)">Mobile</h4><a href="#">iOS</a><a
+                                                    href="#">Android</a>
+                                            </div>
+                                            <div class="col">
+                                                <h4 style="color:var(--primary-1)">Integrations</h4><a
+                                                    href="#">API</a><a href="#">Webhooks</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li><a href="#">Pricing</a></li>
+                                    <li><a href="#">About</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Mega menu: multi-column content in .mega-content --&gt;
+&lt;nav class="mega-nav"&gt;...&lt;/nav&gt;
+
+&lt;!-- CSS shows/hides .mega-content on hover; use JS to keep open on focus for accessibility --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#mega-menu pre code">Copy</button>
+                            <div class="label">HTML • CSS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FLYOUT / CONTEXT MENU -->
+                <section id="flyout" class="section">
+                    <h2>Flyout / Context Menu</h2>
+                    <p class="lead">Right-click or click to open a contextual menu. Useful for tables and items.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="position:relative;min-height:120px">
+                            <div style="color:var(--muted)">Right-click (or click) the box to open context menu.</div>
+                            <div id="context-target"
+                                style="width:160px;height:60px;border-radius:8px;background:linear-gradient(90deg,#0b1220,#0e1a34);display:flex;align-items:center;justify-content:center;margin-top:10px;cursor:pointer;">
+                                Item</div>
+                            <div id="context-menu" style="position:absolute;display:none;z-index:2000;"></div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Context menu: create a positioned menu element and show/hide using JS --&gt;
+&lt;div id="context-target"&gt;Item&lt;/div&gt;
+&lt;div id="context-menu"&gt;&lt;!-- menu contents --&gt;&lt;/div&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#flyout pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RADIAL FAB -->
+                <section id="radial-fab" class="section">
+                    <h2>Radial FAB Menu</h2>
+                    <p class="lead">Floating action button expanding actions in a radial layout.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo">
+                            <div class="radial-menu" id="radial">
+                                <button class="radial-btn" id="radial-btn">+</button>
+                                <a href="#" class="radial-item i1">✉</a>
+                                <a href="#" class="radial-item i2">★</a>
+                                <a href="#" class="radial-item i3">⚙</a>
+                                <a href="#" class="radial-item i4">✚</a>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Radial FAB HTML & JS --&gt;
+&lt;div id="radial" class="radial-menu"&gt;
+  &lt;button id="radial-btn"&gt;+&lt;/button&gt;
+  &lt;a class="radial-item i1"&gt;A&lt;/a&gt; ...
+&lt;/div&gt;
+
+&lt;!-- JS toggles .open and transforms the items --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#radial-fab pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- OVERLAY -->
+                <section id="overlay" class="section">
+                    <h2>Fullscreen Overlay / Morphing Hamburger</h2>
+                    <p class="lead">Morph hamburger to X and reveal an animated fullscreen menu.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="flex-direction:column;gap:10px">
+                            <button id="open-overlay-btn" class="copy-btn"
+                                style="background:transparent;border:1px solid rgba(255,255,255,0.03);color:var(--muted)">Open
+                                Full Menu</button>
+                            <div id="overlay-panel" class="overlay-menu" style="display:none"></div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Overlay trigger --&gt;
+&lt;button id="open-overlay-btn"&gt;Open Full Menu&lt;/button&gt;
+&lt;div id="overlay-panel" class="overlay-menu"&gt;...links...&lt;/div&gt;
+
+&lt;!-- JS toggles .open and updates aria-hidden attribute --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#overlay pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- HAMBURGER SIDEBAR -->
+                <section id="hamburger-sidebar" class="section">
+                    <h2>Hamburger Sidebar (Variant)</h2>
+                    <p class="lead">A compact hamburger that toggles a left sidebar — great for mobile dashboards.</p>
+
+                    <div class="snippet">
+                        <h4>Demo</h4>
+                        <div class="demo" style="flex-direction:column;gap:10px;min-height:120px">
+                            <div style="display:flex;gap:10px;align-items:center;">
+                                <button id="hb-open" class="copy-btn"
+                                    style="background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.03)">Open</button>
+                                <aside id="hb-aside"
+                                    style="position:fixed;left:-260px;top:84px;width:260px;height:calc(100% - 84px);background:linear-gradient(180deg,var(--primary-1),var(--accent));padding:16px;border-radius:8px;color:#041426;transition:left .36s">
+                                    <ul style="list-style:none">
+                                        <li><a href="#">Overview</a></li>
+                                        <li><a href="#">Settings</a></li>
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+
+                        <pre><code class="language-html">&lt;!-- Hamburger sidebar --&gt;
+&lt;button id="hb-open"&gt;Open&lt;/button&gt;
+&lt;aside id="hb-aside" style="left:-260px"&gt;...&lt;/aside&gt;
+
+&lt;!-- JS toggles left between -260px and 0px --&gt;</code></pre>
+
+                        <div class="actions">
+                            <button class="copy-btn" data-target="#hamburger-sidebar pre code">Copy</button>
+                            <div class="label">HTML • CSS • JS</div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+
+    </main>
+
+    <!-- floating bottom nav example -->
+    <nav class="bottom-nav" aria-hidden="true">
+        <a href="#" title="Home">🏠</a>
+        <a href="#" title="Search">🔍</a>
+        <a href="#" title="Add">＋</a>
+        <a href="#" title="Alerts">🔔</a>
+        <a href="#" title="Profile">👤</a>
+    </nav>
+
+    <!-- Prism + page script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="../JS/navigation.js"></script>
+
+</body>
+
+</html>
